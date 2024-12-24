@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>城市旅遊</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: rgb(212, 20, 20);
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: rgb(190, 182, 204);
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        section img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>城市旅遊網</h1>
+</header>
+
+<nav>
+    <a href="#carousel">旅遊地點</a>
+    <a href="#info">旅遊資訊</a>
+    <a href="#taipei">台北</a>
+    <a href="#tokyo">東京</a>
+    <a href="#newyork">紐約</a>
+    <a href="#footer">聯絡我們</a>
+</nav>
+
+<section id="carousel" class="carousel">
+    <img src="C:\Users\Administrator\Desktop\a5a311288a640cd657ced2fb72144040.jpg" alt="城市風光1" class="active">
+    <img src="C:\Users\Administrator\Desktop\20150423-120810_U588_M55021_9330.jpg" alt="城市風光2">
+    <img src="C:\Users\Administrator\Desktop\a5a311288a640cd657ced2fb72144040.jpg" alt="城市風光3">
+    <div class="carousel-buttons">
+        <button onclick="prevSlide()">&#10094;</button>
+        <button onclick="nextSlide()">&#10095;</button>
+    </div>
+</section>
+
+<section id="info">
+    <h2>旅遊資訊</h2>
+    <p>探索城市的魅力，從美食、文化到著名景點，讓您沉浸在無限的可能性中。</p>
+    <p>立即計劃您的下一次城市之旅，享受特別折扣和專屬優惠。</p>
+</section>
+
+<section id="taipei">
+    <h2>台北</h2>
+    
+    <p>台北是一個結合了現代與傳統的城市，擁有著名的地標台北101、夜市美食和豐富的文化遺產。</p>
+</section>
+
+<section id="tokyo">
+    <h2>東京</h2>
+   
+    <p>東京是日本的首都，以其繁華的都市景觀、壯觀的寺廟和獨特的科技文化而聞名。</p>
+</section>
+
+<section id="newyork">
+    <h2>紐約</h2>
+    
+    <p>紐約被譽為「大蘋果」，是一座活力四射的城市，擁有時代廣場、中央公園和世界級的博物館。</p>
+</section>
+
+<footer id="footer">
+    <p>&copy; 2024 城市旅遊網</p>
+    <p>聯絡我們：<a href="aaaaaa@citytravel.com">aaaaa@citytravel.com</a></p>
+</footer>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".carousel img");
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    <div class="right">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3044.185885150929!2d120.98912333466727!3d24.86332844316392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34683154faa8283b%3A0x92cb1c5564a574ef!2z5piO5paw56eR5oqA5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1536665837954" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  
+
+ 
+    setInterval(nextSlide, 3000); 
+</script>
+
